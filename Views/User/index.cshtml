@@ -1,0 +1,15 @@
+@model List<LocalMessenger.Models.User>
+<link rel="stylesheet" href="../index.css"/>
+<form method="post" action="/User/Send">
+    <input name="Name" placeholder="Имя" required />
+    <input name="SecondName" placeholder="Фамилия" required />
+    <input name="BirthDate" type="datetime" asp-for="SelectedDateTime" />
+    <button type="submit">Сохранить</button>
+</form>
+
+<div>
+    @foreach(LocalMessenger.Models.User User in Model)
+    {
+        <p><b>@User.Name</b> @User.SecondName : (@User.BirthDate)</p>
+    }
+</div>
