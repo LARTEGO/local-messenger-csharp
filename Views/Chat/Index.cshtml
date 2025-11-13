@@ -1,0 +1,14 @@
+@model List<LocalMessenger.Models.Message>
+
+<form method="post" action="/Chat/Send">
+    <input name="UserName" placeholder="Имя" required />
+    <input name="text" placeholder="Сообщение" required />
+    <button type="submit">Отправить</button>
+</form>
+
+<div>
+    @foreach(var message in Model)
+    {
+        <p><b>@message.UserName</b> (@message.TimeStamp.ToShortTimeString()): @message.Text</p>
+    }
+</div>
