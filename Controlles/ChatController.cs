@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ChatController : Controller
 {
-    private static List<Message> messages = new();
+    public static List<Message> messages = new();
 
     public IActionResult Index()
     {

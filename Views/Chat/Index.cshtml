@@ -1,20 +1,42 @@
 @model List<LocalMessenger.Models.Message>
-
-<h1>Общий чат</h1>
-
 <div>
-    @foreach(var message in Model)
-    {
-        
-        <p><b>@message.UserName</b> (@message.TimeStamp): @message.Text</p>
-    }
+    <input type="text" id="userInput" placeholder="Ваше имя" required />
+    <input type="text" id="messageInput" placeholder="Сообщение" required />
+    <button id="sendButton">Отправить</button>
 </div>
 
-<form method="post" action="/Chat/Send">
-    <input name="userName" placeholder="Имя" required />
-    <input name="text" placeholder="Сообщение" required />
-    <button type="submit">Отправить</button>
-</form>
+<hr />
 
-<a url="/Regist">Регистрация</a>
-<!--  --> 
+<ul id="messagesList">
+    @foreach (var msg in Model)
+    {
+        <li>
+            <b>@msg.UserName</b> [@msg.TimeStamp.ToShortTimeString()]: @msg.Text
+        </li>
+    }
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chatHub")
+        .build();
+
+    connection.on("ReceiveMessage", function (user, message, time) {
+        const li = document.createElement("li");
+        li.innerHTML = <b>${user}</b> [${time}]: ${message};
+        document.getElementById("messagesList").appendChild(li);
+    });
+
+    connection.start().catch(err => console.error(err.toString()));
+
+    document.getElementById("sendButton").addEventListener("click", function (event) {
+        const user = document.getElementById("userInput").value;
+        const message = document.getElementById("messageInput").value;
+        if (user && message) {
+            connection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+            document.getElementById("messageInput").value = '';
+        }
+        event.preventDefault();
+    });
+</script>
