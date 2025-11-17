@@ -1,27 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\a.a.luzhbin\\Documents\\GitHub\\LocalMessenger\\LocalMessenger.csproj": {}
+    "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\a.a.luzhbin\\Documents\\GitHub\\LocalMessenger\\LocalMessenger.csproj": {
+    "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\a.a.luzhbin\\Documents\\GitHub\\LocalMessenger\\LocalMessenger.csproj",
+        "projectUniqueName": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
         "projectName": "LocalMessenger",
-        "projectPath": "C:\\Users\\a.a.luzhbin\\Documents\\GitHub\\LocalMessenger\\LocalMessenger.csproj",
-        "packagesPath": "C:\\Users\\a.a.luzhbin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\a.a.luzhbin\\Documents\\GitHub\\LocalMessenger\\obj\\",
+        "projectPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+        "packagesPath": "C:\\Users\\Art\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\a.a.luzhbin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Art\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +41,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -55,6 +58,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -63,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
