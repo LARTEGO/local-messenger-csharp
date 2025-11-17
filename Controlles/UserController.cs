@@ -4,22 +4,21 @@ using System.Collections.Generic;
 
 public class UserController : Controller
 {
-    private static List<Message> messages = new();
+    private static List<User> users = new();
 
     public IActionResult Index()
     {
-        return View(messages);
+        return View(users);
     }
 
     [HttpPost]
-    public IActionResult Send(string userName, string text)
+    public IActionResult Send(string realName, DateTime bDate)
     {
-        if (!string.IsNullOrEmpty(text))
-            messages.Add(new Message {
-                Id = messages.Count + 1,
-                UserName = userName,
-                Text = text,
-                TimeStamp = DateTime.Now
+        if (!string.IsNullOrEmpty(realName))
+            users.Add(new User {
+                Id = users.Count + 1,
+                RealName = realName,
+                BDate = bDate
             });
 
         return RedirectToAction("Index");

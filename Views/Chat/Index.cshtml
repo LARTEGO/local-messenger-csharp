@@ -1,14 +1,20 @@
 @model List<LocalMessenger.Models.Message>
-<link rel="stylesheet" href="../index.css"/>
-<form method="post" action="/Chat/Send">
-    <input name="UserName" placeholder="Имя" required />
-    <input name="text" placeholder="Сообщение" required />
-    <button type="submit">Отправить</button>
-</form>
+
+<h1>Общий чат</h1>
 
 <div>
     @foreach(var message in Model)
     {
-        <p><b>@message.UserName</b> (@message.TimeStamp.ToShortTimeString()): @message.Text</p>
+        
+        <p><b>@message.UserName</b> (@message.TimeStamp): @message.Text</p>
     }
 </div>
+
+<form method="post" action="/Chat/Send">
+    <input name="userName" placeholder="Имя" required />
+    <input name="text" placeholder="Сообщение" required />
+    <button type="submit">Отправить</button>
+</form>
+
+<a url="/Regist">Регистрация</a>
+<!--  --> 

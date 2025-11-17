@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "LocalMessenger/1.0.0": {
+        "runtime": {
+          "LocalMessenger.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LocalMessenger/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

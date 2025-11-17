@@ -19,7 +19,7 @@ public class ChatController : Controller
                 Id = messages.Count + 1,
                 UserName = userName,
                 Text = text,
-                TimeStamp = DateTime.Now
+                TimeStamp = TimeOnly.FromDateTime(DateTime.Now)
             });
 
         return RedirectToAction("Index");

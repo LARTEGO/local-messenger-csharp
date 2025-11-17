@@ -1,12 +1,11 @@
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();
 
-  
+
+builder.Services.AddControllersWithViews();  
 
 var app = builder.Build();
 
@@ -25,9 +24,12 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Chat}/{action=Index}/{id?}");
+    pattern: "{controller=Chat}/{action=Index}/{id?}"
+);
+
 app.MapControllerRoute(
-    name: "user",
-    pattern: "{controller=User}/{action=Index}/{id?}");
+    name: "default",
+    pattern: "{controller=User}/{action=Index}/{id?}"
+);
 
 app.Run();
