@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QZrvIdOh2HHig0scpy4iKED6rUeXYaiUHxWfMs7QZxDd2u8jmyCiSpEnjZ3NXvITIEyHss01u05xp3hSe23PXg==",
+  "dgSpecHash": "eUSgMMqTESs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\a.i.matyushechkin\\dotnet\\LocalMessenger\\LocalMessenger.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Art\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.21\\microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\Art\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.21\\microsoft.windowsdesktop.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\Art\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.21\\microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\Art\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.21\\microsoft.netcore.app.host.win-x64.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }
