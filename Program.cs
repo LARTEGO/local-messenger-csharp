@@ -1,12 +1,14 @@
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
 builder.Services.AddControllersWithViews();  
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(); //new
+
+
+
 
 var app = builder.Build();
 
@@ -25,13 +27,12 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Chat}/{action=Index}/{id?}"
-);
-
+    pattern: "{controller=Chat}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=User}/{action=Index}/{id?}"
-);
+    pattern: "{controller=User}/{action=Index}/{id?}");
+
+app.MapHub<LocalMessenger.Hubs.ChatHub>("/chatHub"); //new
 
 
 app.Run();
