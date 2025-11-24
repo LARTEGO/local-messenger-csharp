@@ -1,4 +1,7 @@
 @model List<LocalMessenger.Models.Message>
+
+
+
 <div>
     <input type="text" id="userInput" placeholder="Ваше имя" required />
     <input type="text" id="messageInput" placeholder="Сообщение" required />
@@ -24,7 +27,7 @@
 
     connection.on("ReceiveMessage", function (user, message, time) {
         const li = document.createElement("li");
-        li.innerHTML = <b>${user}</b> [${time}]: ${message};
+        li.innerHTML = `<b>${user}</b> [${time}]: ${message}`;
         document.getElementById("messagesList").appendChild(li);
     });
 
