@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class UserController : Controller
 {
-    private static List<Users> users = new();
+    public static List<Users> users = new();
 
     public IActionResult Index()
     {

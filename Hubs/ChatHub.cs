@@ -8,13 +8,24 @@ namespace LocalMessenger.Hubs
     {
         public async Task SendMessage(string user, string text)
         {
+            // foreach(var Users in UserController.users)
+            // {
+            //     if ()
+            //     {
+            //         var message = new Message
+            //     {
+            //         UserName = user,
+            //         Text = text,
+            //         TimeStamp = DateTime.Now
+            //     };
+            //     }
+            // }
             var message = new Message
             {
                 UserName = user,
                 Text = text,
                 TimeStamp = DateTime.Now
             };
-
             // Добавляем сообщение в хранилище (как раньше)
             ChatController.messages.Add(message);
 
