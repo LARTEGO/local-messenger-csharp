@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using LocalMessenger.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();  
 builder.Services.AddSignalR(); //new
 
-
+builder.Services.AddDbContext<SettingsBD>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var app = builder.Build();
@@ -34,5 +37,10 @@ app.MapControllerRoute(
 
 app.MapHub<LocalMessenger.Hubs.ChatHub>("/chatHub"); //new
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<SettingsBD>();
+    db.Database.EnsureCreated();
+}
 
 app.Run();

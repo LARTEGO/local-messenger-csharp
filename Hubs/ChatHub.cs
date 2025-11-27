@@ -1,11 +1,19 @@
 using Microsoft.AspNetCore.SignalR;
 using LocalMessenger.Models;
 using System.Threading.Tasks;
+using LocalMessenger.Data;
 
 namespace LocalMessenger.Hubs
 {
     public class ChatHub : Hub
     {
+    private readonly SettingsBD _db;
+
+    public ChatHub(SettingsBD db)
+        {
+            _db = db;
+        }
+        
         public async Task SendMessage(string user, string text)
         {
             // foreach(var Users in UserController.users)
@@ -26,8 +34,8 @@ namespace LocalMessenger.Hubs
                 Text = text,
                 TimeStamp = DateTime.Now
             };
-            // Добавляем сообщение в хранилище (как раньше)
-            ChatController.messages.Add(message);
+            _db.Messages.Add(message);
+            await _db.SaveChangesAsync();
 
             // Рассылаем сообщение всем подключённым клиентам
             await Clients.All.SendAsync("ReceiveMessage", message.UserName, message.Text, message.TimeStamp.ToShortTimeString());
