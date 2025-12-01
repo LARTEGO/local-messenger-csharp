@@ -4298,11 +4298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+      "projectUniqueName": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\local-messenger-csharp\\LocalMessenger.csproj",
       "projectName": "LocalMessenger",
-      "projectPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+      "projectPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\local-messenger-csharp\\LocalMessenger.csproj",
       "packagesPath": "C:\\Users\\Art\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\obj\\",
+      "outputPath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\local-messenger-csharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

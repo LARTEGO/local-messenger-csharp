@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ik4tjMEE9w=",
+  "dgSpecHash": "lXoQJaateTY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+  "projectFilePath": "C:\\Users\\Art\\Documents\\GitHub\\local-messenger-csharp\\local-messenger-csharp\\LocalMessenger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Art\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Art\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
