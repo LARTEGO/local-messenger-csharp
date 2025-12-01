@@ -1,15 +1,15 @@
-@model List<LocalMessenger.Models.Users>
-
-<form method="post" action="/User/Send">
-    <input name="UserName" placeholder="Имя" required />
-    <input name="UserSecondName" placeholder="Фамилия" required />
-    <input name="DateBirth" type ="date" placeholder="Дата Рождения" required />
-    <button type="submit">Отправить</button>
-</form>
+@model List<LocalMessenger.Models.User>
 
 <div>
-    @foreach(var users in Model)
+    @foreach(var user in Model)
     {
-        <p><b>@users.UserNames</b>@users.UserSecondName  @users.DateBirth.ToString() </p>
+        <p><b>@user.RealName</b> (@user.BDate)</p>
     }
 </div>
+
+<form method="post" action="/Reg/Send">
+    <h3>Регистрация</h3>
+    <input name="realName" placeholder="Имя" required />
+    <input type="date" name="bDate" placeholder="Дата Рождения" required />
+    <button type="submit">Готово</button>
+</form>
