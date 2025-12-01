@@ -11,6 +11,17 @@ public class ChatController : Controller
         return View(messages);
     }
 
-    
-    
+    [HttpPost]
+    public IActionResult Send(string userName, string text)
+    {
+        if (!string.IsNullOrEmpty(text))
+            messages.Add(new Message {
+                Id = messages.Count + 1,
+                UserName = userName,
+                Text = text,
+                TimeStamp = TimeOnly.FromDateTime(DateTime.Now)
+            });
+
+        return RedirectToAction("Index");
+    }
 }

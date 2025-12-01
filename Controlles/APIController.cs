@@ -1,5 +1,3 @@
-ApiController.cs
-
 using Microsoft.AspNetCore.Mvc;
 using LocalMessenger.Data;
 using Microsoft.EntityFrameworkCore;

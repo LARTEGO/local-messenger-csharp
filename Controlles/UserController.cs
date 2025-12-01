@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using LocalMessenger.Models;
-
 using System.Collections.Generic;
 
 public class UserController : Controller
 {
-    public static List<Users> users = new();
+    private static List<User> users = new();
 
     public IActionResult Index()
     {
@@ -13,14 +12,13 @@ public class UserController : Controller
     }
 
     [HttpPost]
-    public IActionResult Send(string userName, string userSecondName, DateTime dateTime)
+    public IActionResult Send(string realName, DateTime bDate)
     {
-        if (!string.IsNullOrEmpty(userName))
-            users.Add(new Users {
+        if (!string.IsNullOrEmpty(realName))
+            users.Add(new User {
                 Id = users.Count + 1,
-                UserNames = userName,
-                UserSecondName = userSecondName,
-                DateBirth = dateTime
+                RealName = realName,
+                BDate = bDate
             });
 
         return RedirectToAction("Index");
