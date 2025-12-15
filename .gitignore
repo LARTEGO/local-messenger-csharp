@@ -1,1 +1,5 @@
-
+*.cache
+*.json
+*.sqlite
+*.dll
+*.db
