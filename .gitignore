@@ -3,3 +3,8 @@
 *.sqlite
 *.dll
 *.db
+*.txt
+*.exe
+*.editorconfig
+*.pdb
+*.props
