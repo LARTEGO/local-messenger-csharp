@@ -1,27 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using LocalMessenger.Models;
 using System.Collections.Generic;
-
+using LocalMessenger.Data;
+using Microsoft.EntityFrameworkCore;
 public class ChatController : Controller
 {
-    public static List<Message> messages = new();
+    private readonly SettingsBD _db;
 
-    public IActionResult Index()
+    public ChatController(SettingsBD db)
+    (
+        _db = db
+    )
+
+    public async Task<IActionResult> Index()
     {
-        return View(messages);
-    }
-
-    [HttpPost]
-    public IActionResult Send(string userName, string text)
-    {
-        if (!string.IsNullOrEmpty(text))
-            messages.Add(new Message {
-                Id = messages.Count + 1,
-                UserName = userName,
-                Text = text,
-                TimeStamp = TimeOnly.FromDateTime(DateTime.Now)
-            });
-
-        return RedirectToAction("Index");
+        var messages = await _db.Messages.OrderBy(m => m.TimeStamp).ToListAsync();
+            return View(messages);
     }
 }
