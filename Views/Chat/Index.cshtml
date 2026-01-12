@@ -1,4 +1,7 @@
 @model List<LocalMessenger.Models.Message>
+
+
+
 <div>
     <input type="text" id="userInput" placeholder="Ваше имя" required />
     <input type="text" id="messageInput" placeholder="Сообщение" required />
@@ -23,9 +26,17 @@
         .build();
 
     connection.on("ReceiveMessage", function (user, message, time) {
-        const li = document.createElement("li");
-        li.innerHTML =`<b>${user}</b> [${time}]: ${message}`;
-        document.getElementById("messagesList").appendChild(li);
+        const msg = document.createElement("div")
+
+        if(user ==="AI")
+        {
+            msg.style.color = "#4CAF50";
+            msg.style.fontWeight = "bold";
+        }
+
+        msg._innerHTML = `<strong>${user}</strong>: ${message} <span>${time}</span>`;
+        document.getElementById("messagesList").appendChild(msg);
+
     });
 
     connection.start().catch(err => console.error(err.toString()));
@@ -40,4 +51,3 @@
         event.preventDefault();
     });
 </script>
-<!--  --> 

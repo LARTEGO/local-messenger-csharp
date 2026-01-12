@@ -1,0 +1,13 @@
+*.cache
+*.json
+*.sqlite
+*.dll
+*.db
+*.txt
+*.exe
+*.editorconfig
+*.pdb
+*.props
+obj\Debug\net8.0\LocalMessenger.AssemblyInfo.cs
+obj\Debug\net8.0\LocalMessenger.AssemblyInfoInputs.cache
+obj\Debug\net8.0\LocalMessenger.sourcelink.json
