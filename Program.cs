@@ -15,6 +15,7 @@ builder.Services.AddDbContext<SettingsBD>(options =>
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<LocalMessenger.Services.OllamaServices>();   
 
+builder
 
 var app = builder.Build();
 
