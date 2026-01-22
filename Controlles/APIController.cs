@@ -136,7 +136,7 @@ namespace LocalMessenger.Controllers
     // DTO для запросов (чтобы не передавать полную модель)
     public class MessageDto
     {
-        public required string User { get; set; }
-        public required string Text { get; set; }
+        public string User { get; set; }
+        public string Text { get; set; }
     }
 }

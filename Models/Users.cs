@@ -9,9 +9,9 @@ public class Users
     public int Id { get; set; }
     
     [Required]
-    public required string UserNames { get; set; }
+    public string UserNames { get; set; }
     [Required]
-    public required string UserSecondName { get; set; }
+    public string UserSecondName { get; set; }
     [Required]
     public DateTime DateBirth { get; set; }
     

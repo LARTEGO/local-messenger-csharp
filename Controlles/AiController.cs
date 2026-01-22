@@ -13,7 +13,8 @@ public class AiController : ControllerBase
         _ai = ai;
     }
     [HttpPost("generate")]
-    public async Task<IActionResult> Generate([FromBody] AiRequest request)
+    public async Task<IActionResult> Generate(
+        [FromBody] AiRequest request)
     {
         try
         {
@@ -30,3 +31,4 @@ public class AiController : ControllerBase
         }
     }
 }
+

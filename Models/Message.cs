@@ -9,10 +9,10 @@ public class Message
     public int Id { get; set; }
 
     [Required]
-    public required string UserName { get; set; }
+    public string UserName { get; set; }
 
     [Required]
-    public required string Text { get; set; }
+    public string Text { get; set; }
     public DateTime TimeStamp { get; set; }
 }
 }

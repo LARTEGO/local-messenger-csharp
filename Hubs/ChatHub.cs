@@ -32,7 +32,7 @@ namespace LocalMessenger.Hubs
                 TimeStamp = DateTime.Now
             };
             //сохраняем в базу
-            _db.Messages.Add(message);
+        _db.Messages.Add(message);
             await _db.SaveChangesAsync();
             
             // Рассылаем сообщение всем подключённым клиентам
@@ -47,25 +47,38 @@ namespace LocalMessenger.Hubs
             if(text.StartsWith("/ai"))
             {
                 var prompt = text.Replace("/ai","").Trim();
-                if(string.IsNullOrEmpty(prompt)) return;
 
-                var aiText = await _ollama.GenerateAsync(prompt);
 
-                var aiMessage = new Message
+                try
                 {
-                    UserName = "AI",
-                    Text = aiText,
-                    TimeStamp = DateTime.Now    
-                };
+                    var aiText = await _ollama.GenerateAsync(prompt);
 
-            _db.Messages.Add(aiMessage);
-            await _db.SaveChangesAsync();
+                    var aiMessage = new Message
+                    {
+                        UserName = "AI",
+                        Text = aiText,
+                        TimeStamp = DateTime.Now    
+                    };
 
-            await Clients.All.SendAsync(
-              "ReceiveMessage",
-                 "AI",
-                 aiText,
-                  aiMessage.TimeStamp.ToShortTimeString());
+                    _db.Messages.Add(aiMessage);
+                    await _db.SaveChangesAsync();
+
+                    await Clients.All.SendAsync(
+                    "ReceiveMessage",
+                        "AI",
+                        aiText,
+                        aiMessage.TimeStamp.ToShortTimeString());
+            
+                }
+                catch(Exception ex)
+                {
+                    await Clients.All.SendAsync(
+                        "ReceiveMessage",
+                        $"Ошибка AI:{ex.Message}");
+                }
+              
+
+                
             
 
 

@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using LocalMessenger.Data;
 using Microsoft.EntityFrameworkCore;
+using LocalMessenger.Models;
+using LocalMessenger.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();  
@@ -15,7 +17,10 @@ builder.Services.AddDbContext<SettingsBD>(options =>
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<LocalMessenger.Services.OllamaServices>();   
 
-builder
+builder.Services.Configure<AiLimits>( 
+    builder.Configuration.GetSection("AiLimits"));
+
+builder.Services.AddHttpClient<OllamaServices>();
 
 var app = builder.Build();
 
