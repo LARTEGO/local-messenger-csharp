@@ -7,18 +7,24 @@ using LocalMessenger.Models;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Options;
 
+
 namespace LocalMessenger.Services
 {
     public class OllamaServices
     {
         private readonly HttpClient _http;
         private readonly AiLimits _limits;
-
-        public OllamaServices(HttpClient http, IOptions<AiLimits> limits)
-        {
-            _http = http;
-            _limits = limits.Value;
-        }
+        
+        private readonly PromptManager _promptManager;
+        public OllamaServices(
+                            HttpClient http,
+                            IOptions<AiLimits> limits,
+                            PromptManager promptManager)
+                        {
+                            _http = http;
+                            _limits = limits.Value;
+                            _promptManager = promptManager;
+                        }
 
         public async Task<string>  GenerateAsync(string prompt)
         {
@@ -39,19 +45,27 @@ namespace LocalMessenger.Services
             using var cts = new CancellationTokenSource(
                 TimeSpan.FromSeconds(_limits.TimeoutSeconds));
             
+            //ar systemPrompt = "Write a [good | neutral | bad] review from a [man | woman] perspective for a [product | service].";
+
+            var fullPrompt = await _promptManager.BuildPromptAsync(prompt);
+
+
             var body = new
             {
                 model = "qwen2:0.5b",
-                prompt = prompt,
+                prompt = fullPrompt,
                 stream = false,
                 options = new
                 {
-                    num_predict = _limits.MaxTokens
+                    num_predict = _limits.MaxTokens,
+                    temperature = 0.7,
+                    top_p = 0.9
                 } 
             };
             var json = JsonSerializer.Serialize(body);
             var content =  new StringContent(json, Encoding.UTF8, "application/json");  
             
+           
 
             HttpResponseMessage response;
             try
@@ -72,8 +86,7 @@ namespace LocalMessenger.Services
 
             var result = await response.Content.ReadAsStringAsync();
             using var doc = JsonDocument.Parse(result);
-            Console.WriteLine(result); //проверка на результат можно убрать
-
+            
 
             var text = doc.RootElement.GetProperty("response").GetString();
 
@@ -90,6 +103,12 @@ namespace LocalMessenger.Services
             return "";
 
             text = text.Trim();
+
+            var lines = text.Split('\n').Distinct().ToList();
+
+            text = string.Join("\n", lines);
+
+
 
             if(text.Length > _limits.MaxOutputChars)
             text = text.Substring(0, _limits.MaxOutputChars) + "...";
