@@ -3510,19 +3510,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artem.matyushechkin\\.nuget\\packages\\": {}
+    "C:\\Users\\LARTEGO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj",
+      "projectUniqueName": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
       "projectName": "LocalMessenger",
-      "projectPath": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj",
-      "packagesPath": "C:\\Users\\artem.matyushechkin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\obj\\",
+      "projectPath": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+      "packagesPath": "C:\\Users\\LARTEGO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artem.matyushechkin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\LARTEGO\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -4019,7 +4019,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Azure.Identity\" 1.6.0 есть известная уязвимость https://github.com/advisories/GHSA-5mfx-4wcx-rv27 (уровень серьезности: высокий)",
+      "message": "Package 'Azure.Identity' 1.6.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -4029,7 +4029,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Azure.Identity\" 1.6.0 есть известная уязвимость https://github.com/advisories/GHSA-m5vv-6r4h-3vj9 (уровень серьезности: средний)",
+      "message": "Package 'Azure.Identity' 1.6.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -4039,7 +4039,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Azure.Identity\" 1.6.0 есть известная уязвимость https://github.com/advisories/GHSA-wvxc-855f-jvrv (уровень серьезности: средний)",
+      "message": "Package 'Azure.Identity' 1.6.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv",
       "libraryId": "Azure.Identity",
       "targetGraphs": [
         "net10.0"
@@ -4049,7 +4049,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Microsoft.Data.SqlClient\" 5.0.1 есть известная уязвимость https://github.com/advisories/GHSA-98g6-xh36-x2p7 (уровень серьезности: высокий)",
+      "message": "Package 'Microsoft.Data.SqlClient' 5.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
       "libraryId": "Microsoft.Data.SqlClient",
       "targetGraphs": [
         "net10.0"
@@ -4059,7 +4059,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Microsoft.IdentityModel.JsonWebTokens\" 6.21.0 есть известная уязвимость https://github.com/advisories/GHSA-59j7-ghrg-fj52 (уровень серьезности: средний)",
+      "message": "Package 'Microsoft.IdentityModel.JsonWebTokens' 6.21.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
       "targetGraphs": [
         "net10.0"
@@ -4069,7 +4069,7 @@
       "code": "NU1904",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"System.Drawing.Common\" 5.0.0 есть известная уязвимость https://github.com/advisories/GHSA-rxg9-xrhp-64gj (уровень серьезности: критический)",
+      "message": "Package 'System.Drawing.Common' 5.0.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj",
       "libraryId": "System.Drawing.Common",
       "targetGraphs": [
         "net10.0"
@@ -4079,7 +4079,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"System.IdentityModel.Tokens.Jwt\" 6.21.0 есть известная уязвимость https://github.com/advisories/GHSA-59j7-ghrg-fj52 (уровень серьезности: средний)",
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.21.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net10.0"

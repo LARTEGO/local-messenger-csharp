@@ -21,7 +21,8 @@ builder.Services.Configure<AiLimits>(
     builder.Configuration.GetSection("AiLimits"));
 
 builder.Services.AddHttpClient<OllamaServices>();
-
+builder.Services.AddSingleton<IPromptStore, InMemoryPromptStore>();
+builder.Services.AddSingleton<PromptManager>();
 var app = builder.Build();
 
 

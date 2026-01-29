@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj": {}
+    "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj": {
+    "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj",
+        "projectUniqueName": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
         "projectName": "LocalMessenger",
-        "projectPath": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\LocalMessenger.csproj",
-        "packagesPath": "C:\\Users\\artem.matyushechkin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem.matyushechkin\\Documents\\LocalMessenger\\obj\\",
+        "projectPath": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\LocalMessenger.csproj",
+        "packagesPath": "C:\\Users\\LARTEGO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LARTEGO\\Documents\\GitHub\\local-messenger-csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\artem.matyushechkin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LARTEGO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
